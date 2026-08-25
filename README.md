@@ -7,10 +7,17 @@ See [DAWN-REFERENCE.md](./DAWN-REFERENCE.md) for Dawn's original docs (theme str
 ## Project setup status
 
 - [x] Theme code initialized from Dawn
+- [x] Branding pass: color palette (deep ocean blue `#0B3D5C` + coral accent `#FF6B4A`), header/footer/announcement bar, homepage hero copy
 - [ ] GitHub repo created and this local repo pushed to it
 - [ ] Shopify store connected to this GitHub repo (Online Store > Themes > Add theme > Connect from GitHub)
 - [ ] Node.js + Shopify CLI installed locally for `shopify theme dev` live preview (optional but recommended)
-- [ ] Branding pass: replace Dawn's default copy/colors/logo with Ocean Fish Market's
+- [ ] Upload real logo (currently falls back to store name as text wordmark) and a homepage hero image (currently blank placeholder)
+- [ ] Review/replace placeholder copy: announcement bar text, homepage headline, footer tagline, contact page
+
+## Branding
+
+- **Colors:** deep ocean navy `#0B3D5C` (header/footer/dark sections), coral `#FF6B4A` (buttons, CTAs, sale badges, announcement bar), white/light-blue-tinted neutrals for content and cards. Defined in `config/settings_data.json` under `color_schemes` (scheme-1 through scheme-5) — adjustable live in the Shopify theme editor under Theme settings > Colors, no code changes needed.
+- **Logo:** no image yet — header shows the store name as a text wordmark. Add a logo image via Theme settings > Logo in the Shopify editor once you have one; favicon can be set the same way.
 
 ## Workflow
 
