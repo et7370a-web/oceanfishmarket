@@ -3,33 +3,47 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "eyebrow": {
+          "type": "text",
+          "settings": {
+            "text": "<p>New York's Premium Fish Market</p>"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Fresh seafood, straight from the dock",
+            "heading": "Wild-Caught.<br><em>Delivered Fresh.</em>",
             "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium wild-caught seafood sourced daily from trusted fisheries. Expert filleting. Next-day delivery to your door across NYC, Long Island &amp; NJ.</p>"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop today's catch",
+            "button_label_1": "Shop Our Catch",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_1": false,
+            "button_label_2": "Our Story",
+            "button_link_2": "/pages/our-story",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
+        "eyebrow",
         "heading",
+        "text",
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 55,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "image_behavior": "none",
         "desktop_content_alignment": "center",
@@ -37,6 +51,44 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "trust_badges": {
+      "type": "multicolumn",
+      "blocks": {
+        "delivery": {
+          "type": "column",
+          "settings": { "title": "Next-Day", "text": "<p>Delivery</p>", "link_label": "", "link": "" }
+        },
+        "wild": {
+          "type": "column",
+          "settings": { "title": "Wild", "text": "<p>Caught</p>", "link_label": "", "link": "" }
+        },
+        "experience": {
+          "type": "column",
+          "settings": { "title": "30+", "text": "<p>Years experience</p>", "link_label": "", "link": "" }
+        },
+        "kosher": {
+          "type": "column",
+          "settings": { "title": "Kosher", "text": "<p>Certified</p>", "link_label": "", "link": "" }
+        }
+      },
+      "block_order": ["delivery", "wild", "experience", "kosher"],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-3",
+        "columns_desktop": 4,
+        "column_alignment_mobile": "left",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 44
       }
     },
     "featured_collection": {
@@ -70,24 +122,24 @@
     "shop_by_species": {
       "type": "shop-by-species",
       "blocks": {
-        "whole_fish": {
-          "type": "species",
-          "settings": { "label": "Whole fish", "icon": "fish", "link": "/collections/wholesale" }
-        },
         "salmon": {
           "type": "species",
           "settings": { "label": "Salmon", "icon": "salmon", "link": "/collections/all" }
         },
-        "shrimp": {
+        "tuna": {
           "type": "species",
-          "settings": { "label": "Shrimp", "icon": "shrimp", "link": "/collections/all" }
+          "settings": { "label": "Tuna", "icon": "tuna", "link": "/collections/all" }
         },
-        "scallops": {
+        "whitefish": {
           "type": "species",
-          "settings": { "label": "Scallops", "icon": "scallop", "link": "/collections/all" }
+          "settings": { "label": "Halibut & Cod", "icon": "whitefish", "link": "/collections/all" }
+        },
+        "whole_fish": {
+          "type": "species",
+          "settings": { "label": "Wholesale whole fish", "icon": "fish", "link": "/collections/wholesale" }
         }
       },
-      "block_order": ["whole_fish", "salmon", "shrimp", "scallops"],
+      "block_order": ["salmon", "tuna", "whitefish", "whole_fish"],
       "settings": {
         "heading": "Shop by type",
         "heading_size": "h2",
@@ -99,9 +151,9 @@
     "our_market": {
       "type": "our-market",
       "settings": {
-        "heading": "Straight from the dock",
+        "heading": "Where tradition meets uncompromising quality",
         "heading_size": "h1",
-        "text": "<p>Ocean Fish Market sources whole fish and fresh seafood daily and sells it straight to you — no middleman. Members unlock wholesale pricing on whole fish and free shipping on every order.</p>",
+        "text": "<p>Family operated and sourced globally, Ocean Fish BH runs three retail locations and a large-scale wholesale operation — giving us rare, hands-on control of the entire supply chain, from the water to your door.</p>",
         "color_scheme": "scheme-2",
         "padding_top": 52,
         "padding_bottom": 52

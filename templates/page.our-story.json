@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "story": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Our Story",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Where tradition meets<br><em>uncompromising quality.</em>",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Founder Slavik's journey began with a rod and reel beside his grandfather, fly-fishing for rainbow trout near his childhood mountain home. Those early mornings instilled the values that define us today: patience, precision, and an unwavering commitment to quality.</p><p>After decades in the seafood industry, Slavik built a business rooted in the same principles — sourcing the finest wild-caught fish from trusted waters around the globe, and delivering it with the care it deserves. Today, our three retail locations and large-scale wholesale operation give us rare, hands-on control of the entire supply chain.</p>"
+          }
+        }
+      },
+      "block_order": ["caption", "heading", "text"],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "full_width": false,
+        "padding_top": 64,
+        "padding_bottom": 24
+      }
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "sourced": {
+          "type": "column",
+          "settings": {
+            "title": "Sourced globally",
+            "text": "<p>Trusted fisheries around the world, hand-selected for quality.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "family": {
+          "type": "column",
+          "settings": {
+            "title": "Family operated",
+            "text": "<p>Three generations of hands-on care, from the dock to your door.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "wholesale": {
+          "type": "column",
+          "settings": {
+            "title": "Wholesale, too",
+            "text": "<p>Our large-scale wholesale operation is open to members at $9.99/lb.</p>",
+            "link_label": "See membership",
+            "link": "/pages/membership"
+          }
+        }
+      },
+      "block_order": ["sourced", "family", "wholesale"],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-3",
+        "columns_desktop": 3,
+        "column_alignment_mobile": "left",
+        "columns_mobile": "1",
+        "padding_top": 12,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["story", "values"]
+}

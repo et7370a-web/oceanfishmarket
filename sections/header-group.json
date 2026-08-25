@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Fresh catch, delivered daily",
+            "text": "Next-day delivery to NYC, Long Island &amp; NJ",
             "text_alignment": "center",
             "color_scheme": "scheme-4",
             "link": ""
@@ -31,7 +31,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "logo_position": "middle-left",
         "menu": "main-menu",

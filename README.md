@@ -1,26 +1,30 @@
-# Ocean Fish Market
+# Ocean Fish BH
 
-Shopify theme for Ocean Fish Market, built on top of [Shopify's Dawn theme](https://github.com/Shopify/dawn). Theme code (Liquid, CSS, JS) lives here in GitHub; Shopify pulls from this repo to deploy the storefront.
+Shopify theme for Ocean Fish BH, built on top of [Shopify's Dawn theme](https://github.com/Shopify/dawn). Theme code (Liquid, CSS, JS) lives here in GitHub; Shopify pulls from this repo to deploy the storefront.
+
+Branding and copy are pulled from the existing [oceanfishmarketbh.lovable.app](https://preview--oceanfishmarketbh.lovable.app) site: New York's premium wild-caught fish market, family operated, founder Slavik, three retail locations plus a wholesale operation, next-day delivery to NYC/Long Island/NJ, Kosher certified.
 
 See [DAWN-REFERENCE.md](./DAWN-REFERENCE.md) for Dawn's original docs (theme structure, developer tools, staying in sync with upstream Dawn changes).
 
 ## Project setup status
 
 - [x] Theme code initialized from Dawn
-- [x] Branding pass: color palette (deep ocean blue `#0B3D5C` + coral accent `#FF6B4A`), header/footer/announcement bar, homepage hero copy
+- [x] Branding pass: palette matched to the existing site (navy `#0B2A45` + teal `#229E97` + gold `#C9A227`), real hero copy, trust badges, header/footer
+- [x] "Our Story" page with the real founder/company story
 - [x] Wholesale membership theme logic: gated pricing/add-to-cart on wholesale products, membership landing page, homepage sections
 - [ ] GitHub repo created and this local repo pushed to it
 - [ ] Shopify store connected to this GitHub repo (Online Store > Themes > Add theme > Connect from GitHub)
 - [ ] Node.js + Shopify CLI installed locally for `shopify theme dev` live preview (optional but recommended)
-- [ ] Upload real logo (currently falls back to store name as text wordmark) and real product/market photos (currently illustrated placeholders)
-- [ ] Review/replace placeholder copy: announcement bar text, homepage headline, footer tagline, contact page
+- [ ] Real logo file and product/market photos (currently text wordmark + illustrated placeholders — the existing Lovable site has professional product photography worth reusing if you have the source files)
+- [ ] Navigation menu (Home / Shop / Our Story / Shipping / Contact) — lives in Shopify Admin, not this repo, see below
+- [ ] Shipping and Contact pages — not yet built, send the content and I'll add them
 - [ ] Admin-side setup for payments and membership — see below, none of this lives in the theme repo
 
 ## Branding
 
-- **Colors:** deep ocean navy `#0B3D5C` (header/footer/dark sections), coral `#FF6B4A` (buttons, CTAs, sale badges, announcement bar), white/light-blue-tinted neutrals for content and cards. Defined in `config/settings_data.json` under `color_schemes` (scheme-1 through scheme-5) — adjustable live in the Shopify theme editor under Theme settings > Colors, no code changes needed.
-- **Logo:** no image yet — header shows the store name as a text wordmark. Add a logo image via Theme settings > Logo in the Shopify editor once you have one; favicon can be set the same way.
-- **Images:** the homepage's "Our market" and "Shop by type" sections use hand-drawn SVG placeholders (in `sections/our-market.liquid` and `sections/shop-by-species.liquid`) so the layout isn't empty. Swap them for real photos by editing those files, or ask to have them redone once you have photography — no theme-editor picker is wired up for these two, they're hardcoded illustrations by design so they render without any uploads.
+- **Colors:** navy `#0B2A45` (header nav is white/light instead — see note below — but hero photo overlay, footer, and dark sections use navy), teal `#229E97` (primary CTA buttons, matching "Shop Our Catch" on the real site), gold `#C9A227` (badges, sale tags, accents — matching the real site's script-text and "Best Seller" badge). Defined in `config/settings_data.json` under `color_schemes` (scheme-1 through scheme-5) — adjustable live in the Shopify theme editor under Theme settings > Colors, no code changes needed.
+- **Logo:** the real site has a designed two-line "OCEAN / FISH BH" logo with an icon — send the logo file (SVG/PNG) and I'll wire it into Theme settings > Logo. Until then the header falls back to the store's name as a text wordmark, which only reads "Ocean Fish BH" once the actual Shopify store is named that.
+- **Images:** the homepage's "Our market" and "Shop by type" sections use hand-drawn SVG placeholders (in `sections/our-market.liquid` and `sections/shop-by-species.liquid`) so the layout isn't empty. The real site has professional product photography (salmon fillets, market interior) — if you have the source image files, send them and I'll swap the placeholders and wire up real product images.
 
 ## Wholesale membership
 
@@ -30,7 +34,12 @@ The theme enforces membership gating, but **billing, tagging, and product data a
 
 - `snippets/buy-buttons.liquid`: any product tagged `wholesale` shows its price to everyone, but only checks out for customers tagged `member` — non-members see a "Join to order wholesale" card linking to `/pages/membership` instead of the add-to-cart button. Also shows a "5 lb minimum per order" note.
 - `templates/page.membership.json`: a membership landing page (benefits, pricing, how it works) — publish it as a page with handle `membership` so it matches the links above.
-- Homepage sections: "Shop by type" (fish/salmon/shrimp/scallop icons), "Our market" (illustrated dockside scene + story), and a membership CTA banner.
+- Homepage sections: hero (real copy, "Shop Our Catch" / "Our Story" buttons), trust badges (Next-Day Delivery / Wild Caught / 30+ Years Experience / Kosher Certified), "Shop by type" (salmon/tuna/whitefish/wholesale icons), "Our market" (illustrated scene + story teaser), and a membership CTA banner.
+- `templates/page.our-story.json`: full founder story page — publish as a page with handle `our-story`.
+
+## Navigation
+
+Dawn's header pulls its menu from Shopify's own navigation data (Admin > Online Store > Navigation), not from this repo. To match the real site, create a menu named "Main menu" with: Home, Shop (→ `/collections/all`), Our Story (→ `/pages/our-story`), Shipping (→ a Shipping page you'll need to create), Contact (→ a Contact page you'll need to create). Shipping and Contact pages aren't built yet — send their content from the existing site and I'll add them the same way as Our Story.
 
 ### You'll need to do in Shopify Admin
 

@@ -9,55 +9,55 @@
           "settings": {
             "background": "#FFFFFF",
             "background_gradient": "",
-            "text": "#12233A",
-            "button": "#FF6B4A",
+            "text": "#0F2338",
+            "button": "#229E97",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#12233A",
-            "shadow": "#12233A"
+            "secondary_button_label": "#0B2A45",
+            "shadow": "#0B2A45"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#EEF4F8",
+            "background": "#F5F4EF",
             "background_gradient": "",
-            "text": "#12233A",
-            "button": "#0B3D5C",
+            "text": "#0F2338",
+            "button": "#0B2A45",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#12233A",
-            "shadow": "#12233A"
+            "secondary_button_label": "#0B2A45",
+            "shadow": "#0B2A45"
           }
         },
         "scheme-3": {
           "settings": {
-            "background": "#0B3D5C",
+            "background": "#0B2A45",
             "background_gradient": "",
             "text": "#FFFFFF",
-            "button": "#FF6B4A",
+            "button": "#229E97",
             "button_label": "#FFFFFF",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#06202F"
+            "shadow": "#071B2E"
           }
         },
         "scheme-4": {
           "settings": {
-            "background": "#FF6B4A",
+            "background": "#C9A227",
             "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#12233A",
+            "text": "#0B2A45",
+            "button": "#0B2A45",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#12233A"
+            "secondary_button_label": "#0B2A45",
+            "shadow": "#0B2A45"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#08415C",
+            "background": "#229E97",
             "background_gradient": "",
             "text": "#FFFFFF",
-            "button": "#FF6B4A",
-            "button_label": "#FFFFFF",
+            "button": "#C9A227",
+            "button_label": "#0B2A45",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#06202F"
+            "shadow": "#071B2E"
           }
         }
       },
@@ -156,8 +156,8 @@
       "badge_corner_radius": 40,
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
-      "brand_headline": "Fresh, local, sustainably caught",
-      "brand_description": "<p>Ocean Fish Market brings the freshest catch straight from the dock to your table.</p>",
+      "brand_headline": "New York's premium fish market",
+      "brand_description": "<p>Wild-caught seafood, hand-selected daily and delivered fresh to NYC, Long Island, and NJ.</p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
