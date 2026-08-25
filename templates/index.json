@@ -148,10 +148,53 @@
         },
         "halibut": {
           "type": "species",
-          "settings": { "label": "Whole Halibut", "icon": "whitefish", "link": "/collections/all" }
+          "settings": { "label": "Whole Halibut", "icon": "halibut-photo", "link": "/collections/all" }
+        },
+        "flounder": {
+          "type": "species",
+          "settings": { "label": "Whole Flounder", "icon": "flounder-photo", "link": "/collections/all" }
+        },
+        "sea_bass": {
+          "type": "species",
+          "settings": { "label": "Chilean Sea Bass", "icon": "fish", "link": "/collections/all" }
+        },
+        "tile_fish": {
+          "type": "species",
+          "settings": { "label": "Tile Fish", "icon": "tilefish-photo", "link": "/collections/all" }
+        },
+        "whiting": {
+          "type": "species",
+          "settings": { "label": "Whiting", "icon": "whiting-photo", "link": "/collections/all" }
+        },
+        "mullet": {
+          "type": "species",
+          "settings": { "label": "Mullet", "icon": "mullet-photo", "link": "/collections/all" }
+        },
+        "buffalo_fish": {
+          "type": "species",
+          "settings": { "label": "Buffalo Fish", "icon": "buffalofish-photo", "link": "/collections/all" }
+        },
+        "carp": {
+          "type": "species",
+          "settings": { "label": "Carp", "icon": "carp-photo", "link": "/collections/all" }
+        },
+        "dorado": {
+          "type": "species",
+          "settings": { "label": "Dorado", "icon": "dorado-photo", "link": "/collections/all" }
+        },
+        "tilapia": {
+          "type": "species",
+          "settings": { "label": "Tilapia", "icon": "tilapia-photo", "link": "/collections/all" }
+        },
+        "gray_sole": {
+          "type": "species",
+          "settings": { "label": "Gray Sole", "icon": "graysole-photo", "link": "/collections/all" }
         }
       },
-      "block_order": ["salmon", "tuna", "branzino", "snapper", "grouper", "cod", "halibut"],
+      "block_order": [
+        "salmon", "tuna", "branzino", "snapper", "grouper", "cod", "halibut", "flounder",
+        "sea_bass", "tile_fish", "whiting", "mullet", "buffalo_fish", "carp", "dorado", "tilapia", "gray_sole"
+      ],
       "settings": {
         "heading": "This week's whole fish",
         "heading_size": "h2",

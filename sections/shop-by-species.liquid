@@ -142,6 +142,26 @@
               assign photo_asset = 'species-cod.webp'
             when 'grouper-photo'
               assign photo_asset = 'species-grouper.webp'
+            when 'flounder-photo'
+              assign photo_asset = 'species-flounder.webp'
+            when 'halibut-photo'
+              assign photo_asset = 'species-halibut.webp'
+            when 'whiting-photo'
+              assign photo_asset = 'species-whiting.webp'
+            when 'tilefish-photo'
+              assign photo_asset = 'species-tilefish.webp'
+            when 'mullet-photo'
+              assign photo_asset = 'species-mullet.webp'
+            when 'buffalofish-photo'
+              assign photo_asset = 'species-buffalofish.webp'
+            when 'carp-photo'
+              assign photo_asset = 'species-carp.webp'
+            when 'dorado-photo'
+              assign photo_asset = 'species-dorado.webp'
+            when 'tilapia-photo'
+              assign photo_asset = 'species-tilapia.webp'
+            when 'graysole-photo'
+              assign photo_asset = 'species-graysole.webp'
           endcase
         -%}
         <a href="{{ block.settings.link | default: '#' }}" class="species-card" {{ block.shopify_attributes }}>
@@ -271,7 +291,17 @@
             { "value": "snapper-photo", "label": "Red snapper (real photo)" },
             { "value": "whitefish", "label": "Whitefish - halibut, cod, etc. (illustration)" },
             { "value": "whitefish-photo", "label": "Whitefish - cod (real photo)" },
-            { "value": "grouper-photo", "label": "Grouper (real photo)" }
+            { "value": "grouper-photo", "label": "Grouper (real photo)" },
+            { "value": "flounder-photo", "label": "Flounder (real photo)" },
+            { "value": "halibut-photo", "label": "Halibut (real photo)" },
+            { "value": "whiting-photo", "label": "Whiting (real photo)" },
+            { "value": "tilefish-photo", "label": "Tile fish (real photo)" },
+            { "value": "mullet-photo", "label": "Mullet (real photo)" },
+            { "value": "buffalofish-photo", "label": "Buffalo fish (real photo)" },
+            { "value": "carp-photo", "label": "Carp (real photo)" },
+            { "value": "dorado-photo", "label": "Dorado (real photo)" },
+            { "value": "tilapia-photo", "label": "Tilapia (real photo)" },
+            { "value": "graysole-photo", "label": "Gray sole (real photo)" }
           ],
           "default": "fish",
           "label": "Icon"
