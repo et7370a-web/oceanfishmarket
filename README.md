@@ -2,7 +2,7 @@
 
 Shopify theme for Ocean Fish BH, built on top of [Shopify's Dawn theme](https://github.com/Shopify/dawn). Theme code (Liquid, CSS, JS) lives here in GitHub; Shopify pulls from this repo to deploy the storefront.
 
-Branding and copy are pulled from the existing [oceanfishmarketbh.lovable.app](https://preview--oceanfishmarketbh.lovable.app) site: New York's premium wild-caught fish market, family operated, founder Slavik, three retail locations plus a wholesale operation, next-day delivery to NYC/Long Island/NJ, Kosher certified.
+Branding and copy are pulled from the existing [oceanfishmarketbh.lovable.app](https://preview--oceanfishmarketbh.lovable.app) site: New York's premium wild-caught fish market, family operated, founder Slavik, three retail locations plus a wholesale operation, 48-hour delivery (closed Saturdays) to NYC/Long Island/NJ, Kosher certified.
 
 See [DAWN-REFERENCE.md](./DAWN-REFERENCE.md) for Dawn's original docs (theme structure, developer tools, staying in sync with upstream Dawn changes).
 
@@ -28,21 +28,23 @@ See [DAWN-REFERENCE.md](./DAWN-REFERENCE.md) for Dawn's original docs (theme str
 
 ## Catalog model: every fish is whole, $9.99/lb
 
-The catalog is one uniform line — every product is a whole fish, priced at $9.99/lb, 5 lb minimum per order (species can be mixed to hit the minimum). There's no separate "retail fillet" tier. Membership gates checkout on that $9.99/lb price (see below); it doesn't gate a subset of products.
+The catalog is one uniform line — every product is a whole fish, priced at $9.99/lb, 5 lb minimum per order (species can be mixed to hit the minimum). There's no separate "retail fillet" tier.
 
-**Because of this, tag every product `wholesale` in Admin** (not just some) — that's what the theme's gating logic checks. A dedicated `/collections/wholesale` isn't needed since the whole catalog qualifies; links throughout the theme point at `/collections/all`.
+**Every product requires membership to order** — this is now enforced site-wide in the theme (not dependent on tagging individual products): everyone can see prices, but only customers tagged `member` can actually add to cart. Non-members see a "Join to order wholesale" prompt, plus a "Log in" link if they already have an account. A dedicated `/collections/wholesale` isn't needed; links throughout the theme point at `/collections/all`.
 
-`sections/shop-by-species.liquid` renders illustrated whole-fish icons (salmon, tuna, branzino, red snapper, whitefish) — these are hand-drawn SVGs, not photos (no image-generation tool is available here). If you have real product photography — including from the existing Lovable site — send the files and I'll swap them in and wire up real product images.
+**How membership is "remembered":** this relies on Shopify's own customer accounts, not custom code. Once someone's account is tagged `member` (the Shopify Subscriptions app does this automatically when their subscription is active), the theme checks `customer.tags` on every page load — as long as they're logged in, Shopify's session cookie keeps them recognized across visits. Make sure customer accounts are enabled (Settings > Customer accounts) so members can actually log in.
+
+`sections/shop-by-species.liquid` renders whole-fish photos for most species (salmon, tuna, branzino, red snapper, grouper, cod, halibut, flounder, whiting, tile fish, mullet, buffalo fish, carp, dorado, tilapia, gray sole) with an illustrated fallback for anything without a photo yet (currently Chilean Sea Bass isn't shown — send a photo and I'll add it back).
 
 ## Wholesale membership
 
-The theme enforces membership gating, but **billing, tagging, and product data are all Shopify Admin/app configuration — not code.** Here's what's built vs. what you still need to set up.
+The theme enforces membership gating, but **billing and tagging are Shopify Admin/app configuration — not code.** Here's what's built vs. what you still need to set up.
 
 ### Built into the theme
 
-- `snippets/buy-buttons.liquid`: any product tagged `wholesale` shows its price to everyone, but only checks out for customers tagged `member` — non-members see a "Join to order wholesale" card linking to `/pages/membership` instead of the add-to-cart button. Also shows a "5 lb minimum per order" note.
+- `snippets/buy-buttons.liquid`: every product shows its price to everyone, but only checks out for customers tagged `member` — non-members see a "Join to order wholesale" card linking to `/pages/membership`, plus a "Log in" link if they're not signed in. Also shows a "5 lb minimum per order" note.
 - `templates/page.membership.json`: a membership landing page (benefits, pricing, how it works) — publish it as a page with handle `membership` so it matches the links above.
-- Homepage sections: hero (real copy, "Shop Our Catch" / "Our Story" buttons), trust badges (Next-Day Delivery / Wild Caught / 30+ Years Experience / Kosher Certified), "Shop by type" (illustrated whole-fish icons + $9.99/lb price label), "Our market" (illustrated scene + story teaser), and a membership CTA banner.
+- Homepage sections: hero (real copy, "Shop Our Catch" / "Our Story" buttons), trust badges (48-Hour Delivery / Wild Caught / 30+ Years Experience / Kosher Certified), membership CTA (near the top), species photo cards ($9.99/lb whole fish), "Our market" (illustrated scene + story teaser).
 - `templates/page.our-story.json`: full founder story page — publish as a page with handle `our-story`.
 - `templates/page.shipping.json` / `sections/shipping-info.liquid`: delivery-area and delivery-schedule cards matching the real Shipping page, plus a free-shipping-for-members note.
 - `templates/page.contact.json`: intro copy + Dawn's native contact form (Name/Email/Phone/Message) — this is a real, working Shopify contact form, no extra setup needed beyond publishing the page.
@@ -57,8 +59,9 @@ Dawn's header pulls its menu from Shopify's own navigation data (Admin > Online 
 2. **Install the free Shopify Subscriptions app** (Shopify App Store) and create the membership product:
    - Handle it as `ocean-fish-market-membership` (or update the links in `templates/page.membership.json` and `snippets/buy-buttons.liquid` to match whatever handle you use).
    - Add two selling plans: monthly at $3.00, annual at $36.00.
-   - In the app's settings, turn on auto-tagging so an active subscriber gets tagged `member` on their customer profile — this is what the theme checks to unlock wholesale pricing.
-3. **Create products** (every one a whole fish): price at $9.99/lb (sold by weight, or list per-lb and let quantity = pounds), tag **every product** `wholesale`, and set each variant's quantity rule to **minimum 5, increment 1** (Admin > product > variant > "This item has quantity rules") so 5 lb is enforced at checkout.
+   - In the app's settings, turn on auto-tagging so an active subscriber gets tagged `member` on their customer profile — this is what the theme checks to unlock checkout.
+   - Enable customer accounts (Settings > Customer accounts) so members can log in and be recognized.
+3. **Create products** (every one a whole fish): price at $9.99/lb (sold by weight, or list per-lb and let quantity = pounds), and set each variant's quantity rule to **minimum 5, increment 1** (Admin > product > variant > "This item has quantity rules") so 5 lb is enforced at checkout. No special tag needed — every product is gated by default now.
 4. **Free shipping for members**: Admin > Discounts > create an automatic discount, 100% off shipping, restricted to a customer segment filtered by the `member` tag.
 5. **Create the membership page**: Online Store > Pages > Add page, handle `membership`, template = `page.membership`.
 6. **Create the Shipping and Contact pages**: handles `shipping` (template `page.shipping`) and `contact` (template `page.contact`).

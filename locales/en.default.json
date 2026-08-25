@@ -170,6 +170,7 @@
       "wholesale": {
         "member_price_note": "Wholesale pricing is a member benefit.",
         "join_cta": "Join to order wholesale",
+        "login_cta": "Already a member? Log in",
         "member_hint": "Members get free shipping and $9.99/lb whole fish (5 lb minimum). $3/mo or $36/yr, cancel anytime.",
         "minimum_note": "5 lb minimum per order."
       },

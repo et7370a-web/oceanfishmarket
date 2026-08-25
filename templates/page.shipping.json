@@ -12,10 +12,10 @@
         "minimum_heading": "5 lb minimum order — can be the same or various types of fish",
         "minimum_text": "Mix & match any fish from our selection to meet the minimum.",
         "schedule_heading": "Delivery Schedule",
-        "schedule_intro": "We deliver next day, within 24 hours of your order:",
+        "schedule_intro": "We deliver within 48 hours of your order:",
         "order_days": "Sunday, Monday, Tuesday, Wednesday, Thursday",
-        "deliver_days": "Monday, Tuesday, Wednesday, Thursday, Friday",
-        "closed_notice": "<p><strong>Friday 3:00 PM – Saturday 8:00 PM:</strong> Store closed. Orders placed during this time will be delivered the following Monday.</p>",
+        "deliver_days": "Tuesday, Wednesday, Thursday, Friday, Monday",
+        "closed_notice": "<p><strong>No deliveries on Saturdays.</strong> Orders placed Friday or later in the week that would land on a Saturday are delivered the following Monday instead.</p>",
         "color_scheme": "scheme-2",
         "padding_top": 52,
         "padding_bottom": 24
