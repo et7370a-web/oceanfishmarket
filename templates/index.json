@@ -154,10 +154,6 @@
           "type": "species",
           "settings": { "label": "Whole Flounder", "icon": "flounder-photo", "link": "/collections/all" }
         },
-        "sea_bass": {
-          "type": "species",
-          "settings": { "label": "Chilean Sea Bass", "icon": "fish", "link": "/collections/all" }
-        },
         "tile_fish": {
           "type": "species",
           "settings": { "label": "Tile Fish", "icon": "tilefish-photo", "link": "/collections/all" }
@@ -193,7 +189,7 @@
       },
       "block_order": [
         "salmon", "tuna", "branzino", "snapper", "grouper", "cod", "halibut", "flounder",
-        "sea_bass", "tile_fish", "whiting", "mullet", "buffalo_fish", "carp", "dorado", "tilapia", "gray_sole"
+        "tile_fish", "whiting", "mullet", "buffalo_fish", "carp", "dorado", "tilapia", "gray_sole"
       ],
       "settings": {
         "heading": "This week's whole fish",
@@ -248,18 +244,19 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     }
   },
   "order": [
     "image_banner",
+    "trust_badges",
+    "membership_cta",
     "featured_collection",
     "species_cards",
-    "our_market",
-    "membership_cta"
+    "our_market"
   ]
 }
