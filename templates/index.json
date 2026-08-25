@@ -128,7 +128,7 @@
         },
         "tuna": {
           "type": "species",
-          "settings": { "label": "Tuna", "icon": "tuna", "link": "/collections/all" }
+          "settings": { "label": "Tuna", "icon": "tuna-photo", "link": "/collections/all" }
         },
         "branzino": {
           "type": "species",

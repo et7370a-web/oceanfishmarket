@@ -123,11 +123,20 @@
               assign gill_color = '#FFFFFF'
           endcase
         -%}
+        {%- liquid
+          assign photo_asset = blank
+          case block.settings.icon
+            when 'salmon-photo'
+              assign photo_asset = 'species-salmon.webp'
+            when 'tuna-photo'
+              assign photo_asset = 'species-tuna.jpg'
+          endcase
+        -%}
         <a href="{{ block.settings.link | default: '#' }}" class="species-card" {{ block.shopify_attributes }}>
-          <span class="species-card__icon{% if block.settings.icon == 'salmon-photo' %} species-card__icon--photo{% endif %}">
-            {%- if block.settings.icon == 'salmon-photo' -%}
+          <span class="species-card__icon{% if photo_asset != blank %} species-card__icon--photo{% endif %}">
+            {%- if photo_asset != blank -%}
               <img
-                src="{{ 'species-salmon.webp' | asset_url }}"
+                src="{{ photo_asset | asset_url }}"
                 alt="{{ block.settings.label | escape }}"
                 loading="lazy"
                 width="200"
@@ -238,7 +247,8 @@
             { "value": "fish", "label": "Whole fish (generic)" },
             { "value": "salmon", "label": "Salmon (illustration)" },
             { "value": "salmon-photo", "label": "Salmon (real photo)" },
-            { "value": "tuna", "label": "Tuna" },
+            { "value": "tuna", "label": "Tuna (illustration)" },
+            { "value": "tuna-photo", "label": "Tuna (real photo)" },
             { "value": "branzino", "label": "Branzino" },
             { "value": "snapper", "label": "Red snapper" },
             { "value": "whitefish", "label": "Whitefish (halibut, cod, etc.)" }
