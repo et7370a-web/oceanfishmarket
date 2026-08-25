@@ -124,7 +124,7 @@
       "blocks": {
         "salmon": {
           "type": "species",
-          "settings": { "label": "Salmon", "icon": "salmon", "link": "/collections/all" }
+          "settings": { "label": "Salmon", "icon": "salmon-photo", "link": "/collections/all" }
         },
         "tuna": {
           "type": "species",
