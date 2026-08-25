@@ -201,17 +201,6 @@
         "padding_bottom": 44
       }
     },
-    "our_market": {
-      "type": "our-market",
-      "settings": {
-        "heading": "Where tradition meets uncompromising quality",
-        "heading_size": "h1",
-        "text": "<p>Family operated and sourced globally, Ocean Fish BH runs three retail locations and a large-scale wholesale operation — giving us rare, hands-on control of the entire supply chain, from the water to your door.</p>",
-        "color_scheme": "scheme-2",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
     "membership_cta": {
       "type": "rich-text",
       "blocks": {
@@ -256,7 +245,6 @@
     "trust_badges",
     "membership_cta",
     "featured_collection",
-    "species_cards",
-    "our_market"
+    "species_cards"
   ]
 }
