@@ -11,7 +11,36 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
-  {%- if product != blank -%}
+  {%- liquid
+    assign is_wholesale_product = false
+    if product != blank and product.tags != blank and product.tags | join: ',' | downcase | contains: 'wholesale'
+      assign is_wholesale_product = true
+    endif
+
+    assign is_member = false
+    if customer != blank and customer.tags != blank and customer.tags | join: ',' | downcase | contains: 'member'
+      assign is_member = true
+    endif
+
+    assign wholesale_gate_active = false
+    if is_wholesale_product and is_member == false
+      assign wholesale_gate_active = true
+    endif
+  -%}
+
+  {%- if is_wholesale_product -%}
+    {{ 'component-wholesale-gate.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+
+  {%- if wholesale_gate_active -%}
+    <div class="wholesale-member-gate">
+      <p class="wholesale-member-gate__note">{{ 'products.product.wholesale.member_price_note' | t }}</p>
+      <a href="{{ routes.root_url }}pages/membership" class="button button--primary button--full-width">
+        {{ 'products.product.wholesale.join_cta' | t }}
+      </a>
+      <p class="wholesale-member-gate__hint caption">{{ 'products.product.wholesale.member_hint' | t }}</p>
+    </div>
+  {%- elsif product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
       if block.settings.show_gift_card_recipient and product.gift_card?
@@ -23,6 +52,10 @@
         assign show_dynamic_checkout = true
       endif
     -%}
+
+    {%- if is_wholesale_product -%}
+      <p class="wholesale-minimum-note caption">{{ 'products.product.wholesale.minimum_note' | t }}</p>
+    {%- endif -%}
 
     <product-form
       class="product-form"
@@ -114,7 +147,7 @@
     </div>
   {%- endif -%}
 
-  {%- if show_pickup_availability -%}
+  {%- if show_pickup_availability and wholesale_gate_active == false -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
     {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities

@@ -66,10 +66,91 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "shop_by_species": {
+      "type": "shop-by-species",
+      "blocks": {
+        "whole_fish": {
+          "type": "species",
+          "settings": { "label": "Whole fish", "icon": "fish", "link": "/collections/wholesale" }
+        },
+        "salmon": {
+          "type": "species",
+          "settings": { "label": "Salmon", "icon": "salmon", "link": "/collections/all" }
+        },
+        "shrimp": {
+          "type": "species",
+          "settings": { "label": "Shrimp", "icon": "shrimp", "link": "/collections/all" }
+        },
+        "scallops": {
+          "type": "species",
+          "settings": { "label": "Scallops", "icon": "scallop", "link": "/collections/all" }
+        }
+      },
+      "block_order": ["whole_fish", "salmon", "shrimp", "scallops"],
+      "settings": {
+        "heading": "Shop by type",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "padding_top": 44,
+        "padding_bottom": 20
+      }
+    },
+    "our_market": {
+      "type": "our-market",
+      "settings": {
+        "heading": "Straight from the dock",
+        "heading_size": "h1",
+        "text": "<p>Ocean Fish Market sources whole fish and fresh seafood daily and sells it straight to you — no middleman. Members unlock wholesale pricing on whole fish and free shipping on every order.</p>",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "membership_cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Wholesale pricing starts at $3/mo",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Members get whole fish at $9.99/lb (5 lb minimum) and free shipping on every order. $3/month or $36/year, cancel anytime.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "See membership details",
+            "button_link": "/pages/membership",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "shop_by_species",
+    "our_market",
+    "membership_cta"
   ]
 }

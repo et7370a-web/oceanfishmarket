@@ -1,0 +1,176 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .our-market {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .our-market {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .our-market__illustration {
+    border-radius: var(--media-radius, 0);
+    overflow: hidden;
+  }
+
+  .our-market__illustration svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .our-market__content .our-market__heading {
+    margin: 0 0 1.5rem;
+  }
+
+  .our-market__content .rte {
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="our-market">
+      <div class="our-market__illustration">
+        {%- comment -%} Placeholder market illustration — replace with a real photo of the market/dock once available. {%- endcomment -%}
+        <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a dockside fish market with crates of fresh catch">
+          <rect width="640" height="480" fill="#0B3D5C"/>
+          <rect y="330" width="640" height="150" fill="#06202F"/>
+          <g opacity="0.5">
+            <path d="M0 300 Q80 280 160 300 T320 300 T480 300 T640 300 V330 H0 Z" fill="#134f74"/>
+          </g>
+          <g opacity="0.35">
+            <path d="M0 320 Q100 300 200 320 T400 320 T640 320 V330 H0 Z" fill="#eef4f8"/>
+          </g>
+          <!-- market stall -->
+          <rect x="90" y="200" width="220" height="14" fill="#ff6b4a"/>
+          <path d="M90 200 L110 150 H290 L310 200 Z" fill="#ff6b4a"/>
+          <path d="M90 200 L110 150 H130 L120 200 Z" fill="#ffffff" opacity="0.85"/>
+          <path d="M150 200 L165 150 H185 L175 200 Z" fill="#ffffff" opacity="0.85"/>
+          <path d="M210 200 L220 150 H240 L235 200 Z" fill="#ffffff" opacity="0.85"/>
+          <path d="M270 200 L275 150 H295 L295 200 Z" fill="#ffffff" opacity="0.85"/>
+          <rect x="95" y="214" width="30" height="26" fill="#08415C"/>
+          <rect x="140" y="214" width="30" height="26" fill="#08415C"/>
+          <rect x="185" y="214" width="30" height="26" fill="#08415C"/>
+          <rect x="230" y="214" width="30" height="26" fill="#08415C"/>
+          <rect x="275" y="214" width="30" height="26" fill="#08415C"/>
+          <!-- crates of fish -->
+          <g>
+            <rect x="98" y="218" width="24" height="18" rx="1" fill="#eef4f8" opacity="0.9"/>
+            <rect x="143" y="218" width="24" height="18" rx="1" fill="#eef4f8" opacity="0.9"/>
+            <rect x="188" y="218" width="24" height="18" rx="1" fill="#eef4f8" opacity="0.9"/>
+            <rect x="233" y="218" width="24" height="18" rx="1" fill="#eef4f8" opacity="0.9"/>
+            <rect x="278" y="218" width="24" height="18" rx="1" fill="#eef4f8" opacity="0.9"/>
+          </g>
+          <!-- second stall -->
+          <rect x="360" y="220" width="190" height="12" fill="#ffffff" opacity="0.9"/>
+          <path d="M360 220 L378 175 H532 L550 220 Z" fill="#eef4f8" opacity="0.9"/>
+          <rect x="365" y="232" width="26" height="22" fill="#08415C"/>
+          <rect x="405" y="232" width="26" height="22" fill="#08415C"/>
+          <rect x="445" y="232" width="26" height="22" fill="#08415C"/>
+          <rect x="485" y="232" width="26" height="22" fill="#08415C"/>
+          <!-- fish silhouettes on crates -->
+          <path d="M100 224 Q112 218 124 224 Q112 227 112 230 Q112 233 124 224 Q112 230 100 224 Z" fill="#ff6b4a"/>
+          <path d="M368 236 Q382 229 396 236 Q382 239 382 243 Q382 247 396 236 Q382 244 368 236 Z" fill="#ff6b4a"/>
+          <!-- posts -->
+          <rect x="95" y="150" width="6" height="64" fill="#06202F"/>
+          <rect x="300" y="150" width="6" height="64" fill="#06202F"/>
+          <rect x="365" y="175" width="6" height="57" fill="#06202F"/>
+          <rect x="540" y="175" width="6" height="57" fill="#06202F"/>
+        </svg>
+      </div>
+      <div class="our-market__content">
+        <h2 class="our-market__heading title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+        <div class="rte">
+          {{ section.settings.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our market",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our market",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Tell customers about your market, your dock, and where the catch comes from.</p>",
+      "label": "Text"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our market"
+    }
+  ]
+}
+{% endschema %}

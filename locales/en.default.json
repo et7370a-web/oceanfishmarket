@@ -167,6 +167,12 @@
         "unit_price": "Unit price"
       },
       "share": "Share this product",
+      "wholesale": {
+        "member_price_note": "Wholesale pricing is a member benefit.",
+        "join_cta": "Join to order wholesale",
+        "member_hint": "Members get free shipping and $9.99/lb whole fish (5 lb minimum). $3/mo or $36/yr, cancel anytime.",
+        "minimum_note": "5 lb minimum per order."
+      },
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "vendor": "Vendor",

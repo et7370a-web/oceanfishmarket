@@ -1,0 +1,199 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .species-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .species-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .species-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: currentColor;
+    text-align: center;
+  }
+
+  .species-card__icon {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22%;
+  }
+
+  .species-card__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .species-card__label {
+    font-weight: 600;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- unless section.settings.heading == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      </div>
+    {%- endunless -%}
+
+    <div class="species-grid">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.link | default: '#' }}" class="species-card" {{ block.shopify_attributes }}>
+          <span class="species-card__icon">
+            {%- case block.settings.icon -%}
+              {%- when 'salmon' -%}
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 50 Q35 25 65 45 Q55 48 55 50 Q55 52 65 55 Q35 75 15 50 Z" fill="#FF6B4A"/>
+                  <circle cx="24" cy="46" r="2.6" fill="#0B3D5C"/>
+                  <path d="M65 45 L82 34 L78 50 L82 66 L65 55 Z" fill="#FF6B4A"/>
+                </svg>
+              {%- when 'shrimp' -%}
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M30 70 Q20 55 30 40 Q45 20 70 25 Q80 27 78 37 Q64 33 55 45 Q48 55 55 65 Q60 72 52 76 Q40 80 30 70 Z" fill="#FFD166"/>
+                  <path d="M68 26 L76 16 M72 29 L82 22 M74 33 L86 29" stroke="#0B3D5C" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              {%- when 'scallop' -%}
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M50 20 C65 20 82 35 82 55 C82 60 78 60 75 58 C70 62 62 65 50 65 C38 65 30 62 25 58 C22 60 18 60 18 55 C18 35 35 20 50 20 Z" fill="#EEF4F8"/>
+                  <path d="M50 20 L50 65 M35 24 L40 63 M65 24 L60 63" stroke="#0B3D5C" stroke-width="1.5" opacity="0.5"/>
+                </svg>
+              {%- else -%}
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 50 Q40 18 78 45 Q64 49 64 50 Q64 51 78 55 Q40 82 12 50 Z" fill="#0B3D5C"/>
+                  <circle cx="24" cy="46" r="2.8" fill="#FFFFFF"/>
+                  <path d="M62 42 Q70 50 62 58" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6"/>
+                </svg>
+            {%- endcase -%}
+          </span>
+          <span class="species-card__label">{{ block.settings.label }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop by type",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Shop by type",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "species",
+      "name": "Type",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Salmon",
+          "label": "Label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            { "value": "fish", "label": "Whole fish" },
+            { "value": "salmon", "label": "Salmon" },
+            { "value": "shrimp", "label": "Shrimp" },
+            { "value": "scallop", "label": "Scallops" }
+          ],
+          "default": "fish",
+          "label": "Icon"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by type",
+      "blocks": [
+        { "type": "species", "settings": { "label": "Whole fish", "icon": "fish" } },
+        { "type": "species", "settings": { "label": "Salmon", "icon": "salmon" } },
+        { "type": "species", "settings": { "label": "Shrimp", "icon": "shrimp" } },
+        { "type": "species", "settings": { "label": "Scallops", "icon": "scallop" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
