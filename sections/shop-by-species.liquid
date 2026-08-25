@@ -26,56 +26,60 @@
 
   @media screen and (min-width: 990px) {
     .species-grid {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
   .species-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+    display: block;
     text-decoration: none;
     color: currentColor;
-    text-align: center;
-  }
-
-  .species-card__icon {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: rgba(var(--color-foreground), 0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 22%;
-  }
-
-  .species-card__icon svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .species-card__icon--photo {
-    padding: 0;
+    background: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 8px;
     overflow: hidden;
   }
 
-  .species-card__icon img {
+  .species-card__media {
+    aspect-ratio: 4 / 3;
+    background: rgba(var(--color-foreground), 0.06);
+  }
+
+  .species-card__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    display: block;
+  }
+
+  .species-card__illustration {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20%;
+  }
+
+  .species-card__illustration svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .species-card__body {
+    padding: 0.85rem 0.9rem 1rem;
   }
 
   .species-card__label {
     font-weight: 600;
+    font-size: 0.95rem;
   }
 
   .species-card__price {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: rgb(var(--color-button));
     font-weight: 600;
+    margin-top: 0.2rem;
   }
 {%- endstyle -%}
 
@@ -141,30 +145,34 @@
           endcase
         -%}
         <a href="{{ block.settings.link | default: '#' }}" class="species-card" {{ block.shopify_attributes }}>
-          <span class="species-card__icon{% if photo_asset != blank %} species-card__icon--photo{% endif %}">
+          <div class="species-card__media">
             {%- if photo_asset != blank -%}
               <img
                 src="{{ photo_asset | asset_url }}"
                 alt="{{ block.settings.label | escape }}"
                 loading="lazy"
-                width="200"
-                height="200"
+                width="400"
+                height="300"
               >
             {%- else -%}
-              <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M82 30 L96 16 L86 38 L96 60 L82 46 Z" fill="{{ fin_fill }}"/>
-                <path d="M6 38 C6 24 26 16 50 16 C68 16 80 26 84 38 C80 50 68 60 50 60 C26 60 6 52 6 38 Z" fill="{{ body_fill }}" stroke="{{ fin_fill }}" stroke-width="1" stroke-opacity="0.25"/>
-                <path d="M40 17 L47 5 L55 17 Z" fill="{{ fin_fill }}"/>
-                <path d="M32 42 L25 54 L39 46 Z" fill="{{ fin_fill }}"/>
-                <path d="M34 18 C30 28 30 48 34 58" stroke="{{ gill_color }}" stroke-width="2" fill="none" opacity="0.5"/>
-                <circle cx="20" cy="30" r="3" fill="{{ eye_fill }}"/>
-              </svg>
+              <div class="species-card__illustration">
+                <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M82 30 L96 16 L86 38 L96 60 L82 46 Z" fill="{{ fin_fill }}"/>
+                  <path d="M6 38 C6 24 26 16 50 16 C68 16 80 26 84 38 C80 50 68 60 50 60 C26 60 6 52 6 38 Z" fill="{{ body_fill }}" stroke="{{ fin_fill }}" stroke-width="1" stroke-opacity="0.25"/>
+                  <path d="M40 17 L47 5 L55 17 Z" fill="{{ fin_fill }}"/>
+                  <path d="M32 42 L25 54 L39 46 Z" fill="{{ fin_fill }}"/>
+                  <path d="M34 18 C30 28 30 48 34 58" stroke="{{ gill_color }}" stroke-width="2" fill="none" opacity="0.5"/>
+                  <circle cx="20" cy="30" r="3" fill="{{ eye_fill }}"/>
+                </svg>
+              </div>
             {%- endif -%}
-          </span>
-          <span class="species-card__label">{{ block.settings.label }}</span>
-          {%- if section.settings.show_price -%}
-            <span class="species-card__price">{{ section.settings.price_label }}</span>
-          {%- endif -%}
+          </div>
+          <div class="species-card__body">
+            <div class="species-card__label">{{ block.settings.label }}</div>
+            {%- if section.settings.show_price -%}
+              <div class="species-card__price">{{ section.settings.price_label }}</div>
+            {%- endif -%}
+          </div>
         </a>
       {%- endfor -%}
     </div>
@@ -173,14 +181,14 @@
 
 {% schema %}
 {
-  "name": "Shop by type",
+  "name": "Species cards",
   "class": "section",
   "tag": "section",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "default": "Shop by type",
+      "default": "Every fish is whole, $9.99/lb",
       "label": "Heading"
     },
     {
@@ -278,12 +286,12 @@
   ],
   "presets": [
     {
-      "name": "Shop by type",
+      "name": "Species cards",
       "blocks": [
-        { "type": "species", "settings": { "label": "Salmon", "icon": "salmon" } },
-        { "type": "species", "settings": { "label": "Tuna", "icon": "tuna" } },
-        { "type": "species", "settings": { "label": "Branzino", "icon": "branzino" } },
-        { "type": "species", "settings": { "label": "Red Snapper", "icon": "snapper" } }
+        { "type": "species", "settings": { "label": "Salmon", "icon": "salmon-photo" } },
+        { "type": "species", "settings": { "label": "Tuna", "icon": "tuna-photo" } },
+        { "type": "species", "settings": { "label": "Branzino", "icon": "branzino-photo" } },
+        { "type": "species", "settings": { "label": "Red Snapper", "icon": "snapper-photo" } }
       ]
     }
   ]

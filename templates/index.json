@@ -119,6 +119,49 @@
         "padding_bottom": 36
       }
     },
+    "species_cards": {
+      "type": "shop-by-species",
+      "blocks": {
+        "salmon": {
+          "type": "species",
+          "settings": { "label": "Whole Salmon", "icon": "salmon-photo", "link": "/collections/all" }
+        },
+        "tuna": {
+          "type": "species",
+          "settings": { "label": "Whole Tuna", "icon": "tuna-photo", "link": "/collections/all" }
+        },
+        "branzino": {
+          "type": "species",
+          "settings": { "label": "Whole Branzino", "icon": "branzino-photo", "link": "/collections/all" }
+        },
+        "snapper": {
+          "type": "species",
+          "settings": { "label": "Whole Red Snapper", "icon": "snapper-photo", "link": "/collections/all" }
+        },
+        "grouper": {
+          "type": "species",
+          "settings": { "label": "Whole Grouper", "icon": "grouper-photo", "link": "/collections/all" }
+        },
+        "cod": {
+          "type": "species",
+          "settings": { "label": "Whole Cod", "icon": "whitefish-photo", "link": "/collections/all" }
+        },
+        "halibut": {
+          "type": "species",
+          "settings": { "label": "Whole Halibut", "icon": "whitefish", "link": "/collections/all" }
+        }
+      },
+      "block_order": ["salmon", "tuna", "branzino", "snapper", "grouper", "cod", "halibut"],
+      "settings": {
+        "heading": "This week's whole fish",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "show_price": true,
+        "price_label": "$9.99/lb",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
     "our_market": {
       "type": "our-market",
       "settings": {
@@ -172,6 +215,7 @@
   "order": [
     "image_banner",
     "featured_collection",
+    "species_cards",
     "our_market",
     "membership_cta"
   ]
