@@ -130,6 +130,14 @@
               assign photo_asset = 'species-salmon.webp'
             when 'tuna-photo'
               assign photo_asset = 'species-tuna.jpg'
+            when 'branzino-photo'
+              assign photo_asset = 'species-branzino.webp'
+            when 'snapper-photo'
+              assign photo_asset = 'species-snapper.webp'
+            when 'whitefish-photo'
+              assign photo_asset = 'species-cod.webp'
+            when 'grouper-photo'
+              assign photo_asset = 'species-grouper.webp'
           endcase
         -%}
         <a href="{{ block.settings.link | default: '#' }}" class="species-card" {{ block.shopify_attributes }}>
@@ -249,9 +257,13 @@
             { "value": "salmon-photo", "label": "Salmon (real photo)" },
             { "value": "tuna", "label": "Tuna (illustration)" },
             { "value": "tuna-photo", "label": "Tuna (real photo)" },
-            { "value": "branzino", "label": "Branzino" },
-            { "value": "snapper", "label": "Red snapper" },
-            { "value": "whitefish", "label": "Whitefish (halibut, cod, etc.)" }
+            { "value": "branzino", "label": "Branzino (illustration)" },
+            { "value": "branzino-photo", "label": "Branzino (real photo)" },
+            { "value": "snapper", "label": "Red snapper (illustration)" },
+            { "value": "snapper-photo", "label": "Red snapper (real photo)" },
+            { "value": "whitefish", "label": "Whitefish - halibut, cod, etc. (illustration)" },
+            { "value": "whitefish-photo", "label": "Whitefish - cod (real photo)" },
+            { "value": "grouper-photo", "label": "Grouper (real photo)" }
           ],
           "default": "fish",
           "label": "Icon"

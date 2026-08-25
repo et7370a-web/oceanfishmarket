@@ -132,22 +132,26 @@
         },
         "branzino": {
           "type": "species",
-          "settings": { "label": "Branzino", "icon": "branzino", "link": "/collections/all" }
+          "settings": { "label": "Branzino", "icon": "branzino-photo", "link": "/collections/all" }
         },
         "snapper": {
           "type": "species",
-          "settings": { "label": "Red Snapper", "icon": "snapper", "link": "/collections/all" }
+          "settings": { "label": "Red Snapper", "icon": "snapper-photo", "link": "/collections/all" }
         },
         "whitefish": {
           "type": "species",
-          "settings": { "label": "Halibut & Cod", "icon": "whitefish", "link": "/collections/all" }
+          "settings": { "label": "Halibut & Cod", "icon": "whitefish-photo", "link": "/collections/all" }
+        },
+        "grouper": {
+          "type": "species",
+          "settings": { "label": "Grouper", "icon": "grouper-photo", "link": "/collections/all" }
         },
         "whole_fish": {
           "type": "species",
           "settings": { "label": "Shop all", "icon": "fish", "link": "/collections/all" }
         }
       },
-      "block_order": ["salmon", "tuna", "branzino", "snapper", "whitefish", "whole_fish"],
+      "block_order": ["salmon", "tuna", "branzino", "snapper", "whitefish", "grouper", "whole_fish"],
       "settings": {
         "heading": "Every fish is whole, $9.99/lb — shop by type",
         "heading_size": "h2",
