@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "info": {
+      "type": "shipping-info",
+      "settings": {
+        "eyebrow": "Delivery Information",
+        "heading": "Fresh to Your Door,",
+        "heading_accent": "Guaranteed",
+        "areas_heading": "Where We Deliver",
+        "areas_intro": "We currently deliver to the greater New York metropolitan area:",
+        "delivery_areas": "<ul><li>All five boroughs of New York City</li><li>Long Island</li><li>New Jersey</li></ul>",
+        "minimum_heading": "5 lb minimum order — can be the same or various types of fish",
+        "minimum_text": "Mix & match any fish from our selection to meet the minimum.",
+        "schedule_heading": "Delivery Schedule",
+        "schedule_intro": "We deliver next day, within 24 hours of your order:",
+        "order_days": "Sunday, Monday, Tuesday, Wednesday, Thursday",
+        "deliver_days": "Monday, Tuesday, Wednesday, Thursday, Friday",
+        "closed_notice": "<p><strong>Friday 3:00 PM – Saturday 8:00 PM:</strong> Store closed. Orders placed during this time will be delivered the following Monday.</p>",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 24
+      }
+    },
+    "membership_note": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Free shipping for members",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ocean Fish BH members ship free on every order, no minimum beyond the standard 5 lb. $3/month or $36/year, cancel anytime.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "See membership details",
+            "button_link": "/pages/membership",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 24,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": ["info", "membership_note"]
+}

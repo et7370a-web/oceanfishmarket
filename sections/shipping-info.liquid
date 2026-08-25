@@ -1,0 +1,348 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .shipping-info__intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 2.5rem;
+  }
+
+  .shipping-info__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(var(--color-button));
+    margin: 0 0 0.75rem;
+  }
+
+  .shipping-info__accent {
+    color: rgb(var(--color-button));
+  }
+
+  .shipping-info__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .shipping-info__cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .shipping-info__card {
+    background: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .shipping-info__card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .shipping-info__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .shipping-info__icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .shipping-info__icon--pin {
+    background: rgba(var(--color-button), 0.12);
+  }
+
+  .shipping-info__icon--clock {
+    background: rgba(198, 156, 39, 0.15);
+  }
+
+  .shipping-info__card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .shipping-info__areas {
+    margin: 0 0 1.25rem;
+    padding-left: 1.2rem;
+  }
+
+  .shipping-info__areas li {
+    margin-bottom: 0.35rem;
+  }
+
+  .shipping-info__minimum {
+    background: rgba(var(--color-button), 0.08);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .shipping-info__minimum svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: rgb(var(--color-button));
+  }
+
+  .shipping-info__minimum-text strong {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .shipping-info__minimum-text span {
+    display: block;
+    font-size: 0.82rem;
+    color: rgba(var(--color-foreground), 0.7);
+    margin-top: 0.15rem;
+  }
+
+  .shipping-info__schedule {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .shipping-info__schedule li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(var(--color-foreground), 0.04);
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .shipping-info__schedule .deliver {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+  }
+
+  .shipping-info__schedule svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .shipping-info__closed {
+    background: rgba(200, 60, 60, 0.08);
+    border: 0.1rem solid rgba(200, 60, 60, 0.2);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    font-size: 0.85rem;
+    color: #a33;
+  }
+
+  .shipping-info__closed p {
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="shipping-info__intro">
+      <p class="shipping-info__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="title inline-richtext h0">{{ section.settings.heading }} <span class="shipping-info__accent">{{ section.settings.heading_accent }}</span></h2>
+    </div>
+
+    <div class="shipping-info__cards">
+      <div class="shipping-info__card">
+        <div class="shipping-info__card-header">
+          <span class="shipping-info__icon shipping-info__icon--pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(var(--color-button))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <h3>{{ section.settings.areas_heading }}</h3>
+        </div>
+        <p>{{ section.settings.areas_intro }}</p>
+        <ul class="shipping-info__areas">
+          {{ section.settings.delivery_areas }}
+        </ul>
+        <div class="shipping-info__minimum">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V21H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>
+          <span class="shipping-info__minimum-text">
+            <strong>{{ section.settings.minimum_heading }}</strong>
+            <span>{{ section.settings.minimum_text }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="shipping-info__card">
+        <div class="shipping-info__card-header">
+          <span class="shipping-info__icon shipping-info__icon--clock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C69C27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </span>
+          <h3>{{ section.settings.schedule_heading }}</h3>
+        </div>
+        <p>{{ section.settings.schedule_intro }}</p>
+        <ul class="shipping-info__schedule">
+          {%- assign order_days = section.settings.order_days | split: ',' -%}
+          {%- assign deliver_days = section.settings.deliver_days | split: ',' -%}
+          {%- for order_day in order_days -%}
+            <li>
+              <span>Order <strong>{{ order_day | strip }}</strong></span>
+              <span class="deliver">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V6a1 1 0 0 1 1-1h10v11"/><path d="M14 9h4l3 3v4h-7"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+                {{ deliver_days[forloop.index0] | strip }}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <div class="shipping-info__closed">
+          {{ section.settings.closed_notice }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shipping info",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "default": "Delivery Information",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Fresh to Your Door,",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "default": "Guaranteed",
+      "label": "Heading accent word"
+    },
+    {
+      "type": "text",
+      "id": "areas_heading",
+      "default": "Where We Deliver",
+      "label": "Areas card heading"
+    },
+    {
+      "type": "text",
+      "id": "areas_intro",
+      "default": "We currently deliver to the greater New York metropolitan area:",
+      "label": "Areas card intro"
+    },
+    {
+      "type": "richtext",
+      "id": "delivery_areas",
+      "default": "<ul><li>All five boroughs of New York City</li><li>Long Island</li><li>New Jersey</li></ul>",
+      "label": "Delivery areas (list)"
+    },
+    {
+      "type": "text",
+      "id": "minimum_heading",
+      "default": "5 lb minimum order — can be the same or various types of fish",
+      "label": "Minimum order note heading"
+    },
+    {
+      "type": "text",
+      "id": "minimum_text",
+      "default": "Mix & match any fish from our selection to meet the minimum.",
+      "label": "Minimum order note text"
+    },
+    {
+      "type": "text",
+      "id": "schedule_heading",
+      "default": "Delivery Schedule",
+      "label": "Schedule card heading"
+    },
+    {
+      "type": "text",
+      "id": "schedule_intro",
+      "default": "We deliver next day, within 24 hours of your order:",
+      "label": "Schedule card intro"
+    },
+    {
+      "type": "text",
+      "id": "order_days",
+      "default": "Sunday, Monday, Tuesday, Wednesday, Thursday",
+      "label": "Order days (comma-separated)"
+    },
+    {
+      "type": "text",
+      "id": "deliver_days",
+      "default": "Monday, Tuesday, Wednesday, Thursday, Friday",
+      "label": "Delivery days (comma-separated, matched by position)"
+    },
+    {
+      "type": "richtext",
+      "id": "closed_notice",
+      "default": "<p><strong>Friday 3:00 PM – Saturday 8:00 PM:</strong> Store closed. Orders placed during this time will be delivered the following Monday.</p>",
+      "label": "Store-closed notice"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shipping info"
+    }
+  ]
+}
+{% endschema %}

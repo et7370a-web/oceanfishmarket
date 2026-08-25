@@ -30,8 +30,8 @@
             "button_label": "Become a member",
             "button_link": "/products/ocean-fish-market-membership",
             "button_style_secondary": false,
-            "button_label_2": "Browse wholesale fish",
-            "button_link_2": "/collections/wholesale",
+            "button_label_2": "Browse our catch",
+            "button_link_2": "/collections/all",
             "button_style_secondary_2": true
           }
         }
@@ -53,7 +53,7 @@
           "type": "column",
           "settings": {
             "title": "Free shipping",
-            "text": "<p>Every order ships free, no minimum beyond the standard 5 lb wholesale minimum.</p>",
+            "text": "<p>Every order ships free, no minimum beyond the standard 5 lb order minimum.</p>",
             "link_label": "",
             "link": ""
           }
@@ -62,9 +62,9 @@
           "type": "column",
           "settings": {
             "title": "$9.99/lb whole fish",
-            "text": "<p>Wholesale pricing on whole fish is unlocked as soon as you join. 5 lb minimum per order.</p>",
-            "link_label": "Shop wholesale",
-            "link": "/collections/wholesale"
+            "text": "<p>Every fish in the shop is whole, priced at $9.99/lb, unlocked as soon as you join. 5 lb minimum per order.</p>",
+            "link_label": "Shop the catch",
+            "link": "/collections/all"
           }
         },
         "flexible": {
@@ -108,7 +108,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>1. Join for $3/month or $36/year — billed automatically, cancel anytime from your account.<br>2. Once you're a member, wholesale whole-fish products unlock at $9.99/lb.<br>3. Order at least 5 lb per whole-fish item; mix species freely above that minimum.<br>4. Every order ships free.</p>"
+            "text": "<p>1. Join for $3/month or $36/year — billed automatically, cancel anytime from your account.<br>2. Once you're a member, every whole fish in the shop unlocks at $9.99/lb.<br>3. Order at least 5 lb — mix and match species freely to hit the minimum.<br>4. Every order ships free.</p>"
           }
         }
       },

@@ -19,7 +19,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Premium wild-caught seafood sourced daily from trusted fisheries. Expert filleting. Next-day delivery to your door across NYC, Long Island &amp; NJ.</p>"
+            "text": "<p>Whole fish, $9.99/lb, every day — sourced daily from trusted fisheries and hand-cleaned to order. Next-day delivery to your door across NYC, Long Island &amp; NJ.</p>"
           }
         },
         "button": {
@@ -94,7 +94,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "This week's catch",
+        "title": "Every fish, whole — $9.99/lb",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -130,20 +130,30 @@
           "type": "species",
           "settings": { "label": "Tuna", "icon": "tuna", "link": "/collections/all" }
         },
+        "branzino": {
+          "type": "species",
+          "settings": { "label": "Branzino", "icon": "branzino", "link": "/collections/all" }
+        },
+        "snapper": {
+          "type": "species",
+          "settings": { "label": "Red Snapper", "icon": "snapper", "link": "/collections/all" }
+        },
         "whitefish": {
           "type": "species",
           "settings": { "label": "Halibut & Cod", "icon": "whitefish", "link": "/collections/all" }
         },
         "whole_fish": {
           "type": "species",
-          "settings": { "label": "Wholesale whole fish", "icon": "fish", "link": "/collections/wholesale" }
+          "settings": { "label": "Shop all", "icon": "fish", "link": "/collections/all" }
         }
       },
-      "block_order": ["salmon", "tuna", "whitefish", "whole_fish"],
+      "block_order": ["salmon", "tuna", "branzino", "snapper", "whitefish", "whole_fish"],
       "settings": {
-        "heading": "Shop by type",
+        "heading": "Every fish is whole, $9.99/lb — shop by type",
         "heading_size": "h2",
         "color_scheme": "scheme-1",
+        "show_price": true,
+        "price_label": "$9.99/lb",
         "padding_top": 44,
         "padding_bottom": 20
       }
@@ -172,7 +182,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Members get whole fish at $9.99/lb (5 lb minimum) and free shipping on every order. $3/month or $36/year, cancel anytime.</p>"
+            "text": "<p>Every fish in the shop is whole, $9.99/lb, 5 lb minimum. Members also get free shipping on every order. $3/month or $36/year, cancel anytime.</p>"
           }
         },
         "button": {
