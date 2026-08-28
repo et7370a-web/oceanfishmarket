@@ -35,9 +35,17 @@
     text-decoration: none;
     color: currentColor;
     background: rgb(var(--color-background));
-    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
-    border-radius: 8px;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(11, 42, 69, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .species-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(11, 42, 69, 0.16);
+    border-color: rgb(var(--color-button));
   }
 
   .species-card__media {
@@ -76,10 +84,14 @@
   }
 
   .species-card__price {
-    font-size: 0.85rem;
+    display: inline-block;
+    font-size: 0.78rem;
     color: rgb(var(--color-button));
-    font-weight: 600;
-    margin-top: 0.2rem;
+    background: rgba(var(--color-button), 0.12);
+    font-weight: 700;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 40px;
   }
 {%- endstyle -%}
 
