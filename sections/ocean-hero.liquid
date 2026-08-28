@@ -112,6 +112,37 @@
       padding: 4rem 1.25rem 6rem;
     }
   }
+
+  .ocean-hero__rod {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.92;
+  }
+
+  .ocean-hero__rod--left {
+    left: -8px;
+  }
+
+  .ocean-hero__rod--right {
+    right: -8px;
+    transform: scaleX(-1);
+  }
+
+  @media screen and (max-width: 899px) {
+    .ocean-hero__rod {
+      width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .ocean-hero__rod {
+      display: none;
+    }
+  }
 {%- endstyle -%}
 
 <section class="ocean-hero">
@@ -163,6 +194,23 @@
       <path d="M0,80L80,74.7C160,69,320,59,480,64C640,69,800,91,960,90.7C1120,91,1280,69,1360,58.7L1440,48L1440,140L0,140Z" fill="rgba(255,255,255,0.22)"/>
     </svg>
   </div>
+
+  {%- if section.settings.show_fishing_rods -%}
+    <svg class="ocean-hero__rod ocean-hero__rod--left" viewBox="0 0 200 400" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180,15 C175,140 150,280 130,400" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <circle cx="130" cy="398" r="4" fill="#EBA928"/>
+      <path d="M20,392 C50,300 90,220 120,160 C145,110 165,60 180,15" fill="none" stroke="#EBA928" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="26" cy="368" r="14" fill="#0B2A45" stroke="#EBA928" stroke-width="2"/>
+      <path d="M12,398 L32,372" stroke="#0B2A45" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+    <svg class="ocean-hero__rod ocean-hero__rod--right" viewBox="0 0 200 400" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180,15 C175,140 150,280 130,400" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <circle cx="130" cy="398" r="4" fill="#EBA928"/>
+      <path d="M20,392 C50,300 90,220 120,160 C145,110 165,60 180,15" fill="none" stroke="#EBA928" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="26" cy="368" r="14" fill="#0B2A45" stroke="#EBA928" stroke-width="2"/>
+      <path d="M12,398 L32,372" stroke="#0B2A45" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -242,6 +290,13 @@
     {
       "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fishing_rods",
+      "default": true,
+      "label": "Show fishing rods",
+      "info": "Decorative rods at each edge, hidden on small screens."
     },
     {
       "type": "range",

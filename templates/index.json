@@ -13,6 +13,7 @@
         "button_label_2": "Our Story",
         "button_link_2": "/pages/our-story",
         "button_style_secondary_2": true,
+        "show_fishing_rods": true,
         "min_height": 560,
         "min_height_mobile": 480
       }
