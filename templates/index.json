@@ -1,56 +1,20 @@
 {
   "sections": {
     "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "eyebrow": {
-          "type": "text",
-          "settings": {
-            "text": "<p>New York's Premium Fish Market</p>"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Wild-Caught.<br><em>Delivered Fresh.</em>",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Whole fish, $9.99/lb, every day — sourced daily from trusted fisheries and hand-cleaned to order. Delivered within 48 hours to your door across NYC, Long Island &amp; NJ. Closed Saturdays for delivery.</p>"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Our Catch",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Our Story",
-            "button_link_2": "/pages/our-story",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "eyebrow",
-        "heading",
-        "text",
-        "button"
-      ],
+      "type": "ocean-hero",
       "settings": {
-        "image_overlay_opacity": 55,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "New York's Premium Fish Market",
+        "heading": "Wild-Caught.<br><em>Delivered Fresh.</em>",
+        "heading_size": "h0",
+        "text": "<p>Whole fish, $9.99/lb, every day — sourced daily from trusted fisheries and hand-cleaned to order. Delivered within 48 hours to your door across NYC, Long Island &amp; NJ. Closed Saturdays for delivery.</p>",
+        "button_label_1": "Shop Our Catch",
+        "button_link_1": "shopify://collections/all",
+        "button_style_secondary_1": false,
+        "button_label_2": "Our Story",
+        "button_link_2": "/pages/our-story",
+        "button_style_secondary_2": true,
+        "min_height": 560,
+        "min_height_mobile": 480
       }
     },
     "trust_badges": {

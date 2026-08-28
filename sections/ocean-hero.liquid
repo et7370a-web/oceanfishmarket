@@ -1,0 +1,273 @@
+{%- style -%}
+  .ocean-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0B2A45 0%, #0A3C5C 45%, #0E5470 75%, #12667F 100%);
+    min-height: {{ section.settings.min_height_mobile }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ocean-hero {
+      min-height: {{ section.settings.min_height }}px;
+    }
+  }
+
+  .ocean-hero__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 25% 15%, rgba(255, 255, 255, 0.10), transparent 60%),
+      radial-gradient(ellipse 45% 40% at 80% 10%, rgba(15, 184, 170, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+
+  .ocean-hero__waves {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .ocean-hero__waves svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .ocean-hero__wave-back path {
+    animation: ocean-hero-drift 22s ease-in-out infinite;
+  }
+
+  .ocean-hero__wave-mid path {
+    animation: ocean-hero-drift 16s ease-in-out infinite reverse;
+  }
+
+  .ocean-hero__wave-front path {
+    animation: ocean-hero-drift 11s ease-in-out infinite;
+  }
+
+  @keyframes ocean-hero-drift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-2.5%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ocean-hero__wave-back path,
+    .ocean-hero__wave-mid path,
+    .ocean-hero__wave-front path {
+      animation: none;
+    }
+  }
+
+  .ocean-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 8rem;
+  }
+
+  .ocean-hero__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 1rem;
+  }
+
+  .ocean-hero__heading {
+    color: #FFFFFF;
+    text-wrap: balance;
+  }
+
+  .ocean-hero__heading em {
+    font-style: italic;
+    color: #EBA928;
+  }
+
+  .ocean-hero__text {
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 34rem;
+    margin: 1.25rem auto 0;
+  }
+
+  .ocean-hero__buttons {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ocean-hero__content {
+      padding: 4rem 1.25rem 6rem;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ocean-hero">
+  <div class="ocean-hero__glow"></div>
+
+  <div class="ocean-hero__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="ocean-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="ocean-hero__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <div class="ocean-hero__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
+      <div class="ocean-hero__buttons">
+        {%- if section.settings.button_label_1 != blank -%}
+          <a
+            href="{{ section.settings.button_link_1 | default: '#' }}"
+            class="button {% if section.settings.button_style_secondary_1 %}button--secondary{% else %}button--primary{% endif %}"
+          >
+            {{ section.settings.button_label_1 | escape }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a
+            href="{{ section.settings.button_link_2 | default: '#' }}"
+            class="button {% if section.settings.button_style_secondary_2 %}button--secondary{% else %}button--primary{% endif %}"
+          >
+            {{ section.settings.button_label_2 | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="ocean-hero__waves" aria-hidden="true">
+    <svg class="ocean-hero__wave-back" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,120L60,109.3C120,99,240,77,360,82.7C480,88,600,120,720,125.3C840,131,960,109,1080,93.3C1200,77,1320,67,1380,61.3L1440,56L1440,200L0,200Z" fill="rgba(15,184,170,0.22)"/>
+    </svg>
+    <svg class="ocean-hero__wave-mid" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:-40px;">
+      <path d="M0,140L48,129.3C96,119,192,97,288,97.3C384,97,480,119,576,124C672,129,768,119,864,97.3C960,76,1056,44,1152,38.7C1248,33,1344,55,1392,65.3L1440,76L1440,180L0,180Z" fill="rgba(255,255,255,0.14)"/>
+    </svg>
+    <svg class="ocean-hero__wave-front" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:-30px;">
+      <path d="M0,80L80,74.7C160,69,320,59,480,64C640,69,800,91,960,90.7C1120,91,1280,69,1360,58.7L1440,48L1440,140L0,140Z" fill="rgba(255,255,255,0.22)"/>
+    </svg>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ocean hero",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "default": "New York's Premium Fish Market",
+      "label": "Eyebrow text"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Wild-Caught. Delivered Fresh.",
+      "label": "Heading",
+      "info": "Wrap a word in italics to color it gold."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" },
+        { "value": "hxl", "label": "Extra large" }
+      ],
+      "default": "h0",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Premium wild-caught whole fish, sourced daily and delivered to your door.</p>",
+      "label": "Subtext"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "default": "Shop Our Catch",
+      "label": "Button 1 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary_1",
+      "default": false,
+      "label": "Button 1 outline style"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "default": "Our Story",
+      "label": "Button 2 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary_2",
+      "default": true,
+      "label": "Button 2 outline style"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 320,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Minimum height (desktop)",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "min": 280,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Minimum height (mobile)",
+      "default": 480
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ocean hero"
+    }
+  ]
+}
+{% endschema %}
