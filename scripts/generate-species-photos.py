@@ -46,11 +46,11 @@ FISH = {
     "tilefish":    ("species-tilefish.webp",    "golden tilefish with a long blue-grey body flecked with yellow-gold, a fleshy ridge on the head and yellow markings on the face"),
     "whiting":     ("species-whiting.webp",     "whiting with a slim silvery body, a faint golden lateral tint, a small head and a forked tail"),
     "mullet":      ("species-mullet.webp",      "grey mullet with a torpedo body, silver with faint horizontal grey stripes, a blunt rounded head and two separate dorsal fins"),
-    "buffalofish": ("species-buffalofish.webp", "buffalo fish with a heavy deep bronze-grey body, large coarse scales, a high arched back and a small downturned mouth"),
+    "buffalofish": ("species-buffalofish.jpg", "buffalo fish with a heavy deep bronze-grey body, large coarse scales, a high arched back and a small downturned mouth"),
     "carp":        ("species-carp.jpg",        "common carp with large golden-brown scales, a thick body, two short barbels at the mouth corners and orange-tinged lower fins"),
     "dorado":      ("species-dorado.webp",      None),  # filled from --dorado
     "tilapia":     ("species-tilapia.webp",     "tilapia with a deep compact grey body, faint vertical bars, a long spiny dorsal fin and a rounded snout"),
-    "graysole":    ("species-graysole.webp",    "gray sole (witch flounder), a slender oval flatfish with an even grey-brown upper side and a very small mouth"),
+    "graysole":    ("species-graysole.jpg",    "gray sole (witch flounder), a slender oval flatfish with an even grey-brown upper side and a very small mouth"),
 }
 DORADO = {
     "gilthead": "gilt-head bream with an oval silver body, a golden band between the eyes and a small dark spot by the gill cover",
