@@ -29,7 +29,7 @@ DEST = {
     "whiting": "species-whiting.webp",
     "mullet": "species-mullet.webp",
     "buffalofish": "species-buffalofish.webp",
-    "carp": "species-carp.webp",
+    "carp": "species-carp.jpg",
     "dorado": "species-dorado.webp",
     "tilapia": "species-tilapia.webp",
     "graysole": "species-graysole.webp",
