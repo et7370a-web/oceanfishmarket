@@ -10,3 +10,12 @@ Thumbs.db
 .shopify
 node_modules
 *.zip
+_preview*.html
+
+# secrets
+.oai_key
+.env
+*.key
+_species_raw/
+.gemini_key
+_species_inbox/
