@@ -30,7 +30,7 @@ DEST = {
     "mullet": "species-mullet.jpg",
     "buffalofish": "species-buffalofish.jpg",
     "carp": "species-carp.jpg",
-    "dorado": "species-dorado.webp",
+    "dorado": "species-dorado.jpg",
     "tilapia": "species-tilapia.jpg",
     "graysole": "species-graysole.jpg",
 }
