@@ -25,13 +25,13 @@ DEST = {
     "cod": "species-cod.jpg",
     "halibut": "species-halibut.jpg",
     "flounder": "species-flounder.jpg",
-    "tilefish": "species-tilefish.webp",
-    "whiting": "species-whiting.webp",
+    "tilefish": "species-tilefish.jpg",
+    "whiting": "species-whiting.jpg",
     "mullet": "species-mullet.webp",
     "buffalofish": "species-buffalofish.jpg",
     "carp": "species-carp.jpg",
     "dorado": "species-dorado.webp",
-    "tilapia": "species-tilapia.webp",
+    "tilapia": "species-tilapia.jpg",
     "graysole": "species-graysole.jpg",
 }
 EXTS = (".png", ".jpg", ".jpeg", ".webp")
