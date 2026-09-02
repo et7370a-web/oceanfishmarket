@@ -107,6 +107,32 @@
     flex-wrap: wrap;
   }
 
+  .ocean-hero__call {
+    margin-top: 1.75rem;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .ocean-hero__call a {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #EBA928;
+    text-decoration: none;
+    margin: 0 0.05em;
+  }
+
+  .ocean-hero__call a:hover {
+    text-decoration: underline;
+  }
+
+  .ocean-hero__hours {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.35rem;
+  }
+
   @media screen and (max-width: 749px) {
     .ocean-hero__content {
       padding: 4rem 1.25rem 6rem;
@@ -180,6 +206,15 @@
           </a>
         {%- endif -%}
       </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_call_line -%}
+      <p class="ocean-hero__call">
+        {{ section.settings.call_text }}
+        <a href="tel:{{ section.settings.phone_number }}">{{ section.settings.phone_display }}</a>
+        {{ section.settings.call_text_2 }}
+        <span class="ocean-hero__hours">{{ section.settings.hours_text }}</span>
+      </p>
     {%- endif -%}
   </div>
 
@@ -286,6 +321,46 @@
       "id": "button_style_secondary_2",
       "default": true,
       "label": "Button 2 outline style"
+    },
+    {
+      "type": "header",
+      "content": "Call for special requests"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_call_line",
+      "default": true,
+      "label": "Show call line"
+    },
+    {
+      "type": "text",
+      "id": "call_text",
+      "default": "For special requests, call",
+      "label": "Text before phone number"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "default": "+16467509232",
+      "label": "Phone number (tel: link, e.g. +16467509232)"
+    },
+    {
+      "type": "text",
+      "id": "phone_display",
+      "default": "(646) 750-9232",
+      "label": "Phone number (displayed)"
+    },
+    {
+      "type": "text",
+      "id": "call_text_2",
+      "default": "or order online.",
+      "label": "Text after phone number"
+    },
+    {
+      "type": "text",
+      "id": "hours_text",
+      "default": "Open Sunday – Thursday",
+      "label": "Hours line"
     },
     {
       "type": "header",
