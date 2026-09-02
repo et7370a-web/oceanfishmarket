@@ -2,7 +2,7 @@
 
 Shopify theme for Ocean Fish BH, built on top of [Shopify's Dawn theme](https://github.com/Shopify/dawn). Theme code (Liquid, CSS, JS) lives here in GitHub; Shopify pulls from this repo to deploy the storefront.
 
-Branding and copy are pulled from the existing [oceanfishmarketbh.lovable.app](https://preview--oceanfishmarketbh.lovable.app) site: New York's premium wild-caught fish market, family operated, founder Slavik, three retail locations plus a wholesale operation, 48-hour delivery (closed Saturdays) to NYC/Long Island/NJ, Kosher certified.
+Branding and copy are pulled from the existing [oceanfishmarketbh.lovable.app](https://preview--oceanfishmarketbh.lovable.app) site: New York's premium wild-caught fish market, family operated, founder Slavik, three retail locations plus a wholesale operation, 24-hour delivery to NYC/Long Island/NJ, open Sunday–Thursday (closed Friday/Saturday), Kosher certified. Order questions: (646) 750-9232.
 
 See [DAWN-REFERENCE.md](./DAWN-REFERENCE.md) for Dawn's original docs (theme structure, developer tools, staying in sync with upstream Dawn changes).
 
@@ -44,7 +44,7 @@ The theme enforces membership gating, but **billing and tagging are Shopify Admi
 
 - `snippets/buy-buttons.liquid`: every product shows its price to everyone, but only checks out for customers tagged `member` — non-members see a "Join to order wholesale" card linking to `/pages/membership`, plus a "Log in" link if they're not signed in. Also shows a "5 lb minimum per order" note.
 - `templates/page.membership.json`: a membership landing page (benefits, pricing, how it works) — publish it as a page with handle `membership` so it matches the links above.
-- Homepage sections: hero (real copy, "Shop Our Catch" / "Our Story" buttons), trust badges (48-Hour Delivery / Wild Caught / 30+ Years Experience / Kosher Certified), membership CTA (near the top), species photo cards ($9.99/lb whole fish), "Our market" (illustrated scene + story teaser).
+- Homepage sections: hero (real copy, "Shop Our Catch" / "Our Story" buttons), trust badges (24-Hour Delivery / Wild Caught / 30+ Years Experience / Kosher Certified), membership CTA (near the top), species photo cards ($9.99/lb whole fish).
 - `templates/page.our-story.json`: full founder story page — publish as a page with handle `our-story`.
 - `templates/page.shipping.json` / `sections/shipping-info.liquid`: delivery-area and delivery-schedule cards matching the real Shipping page, plus a free-shipping-for-members note.
 - `templates/page.contact.json`: intro copy + Dawn's native contact form (Name/Email/Phone/Message) — this is a real, working Shopify contact form, no extra setup needed beyond publishing the page.
