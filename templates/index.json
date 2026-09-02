@@ -6,7 +6,7 @@
         "eyebrow": "New York's Premium Fish Market",
         "heading": "Wild-Caught.<br><em>Delivered Fresh.</em>",
         "heading_size": "h0",
-        "text": "<p>Whole fish, $9.99/lb, every day — sourced daily from trusted fisheries and hand-cleaned to order. Delivered within 48 hours to your door across NYC, Long Island &amp; NJ. Closed Saturdays for delivery.</p>",
+        "text": "<p>Whole fish, $9.99/lb, every day — sourced daily from trusted fisheries and hand-cleaned to order. Delivered within 24 hours to your door across NYC, Long Island &amp; NJ. Open Sunday–Thursday.</p>",
         "button_label_1": "Shop Our Catch",
         "button_link_1": "shopify://collections/all",
         "button_style_secondary_1": false,
@@ -23,7 +23,7 @@
       "blocks": {
         "delivery": {
           "type": "column",
-          "settings": { "title": "48-Hour", "text": "<p>Delivery</p>", "link_label": "", "link": "" }
+          "settings": { "title": "24-Hour", "text": "<p>Delivery</p>", "link_label": "", "link": "" }
         },
         "wild": {
           "type": "column",

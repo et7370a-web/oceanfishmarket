@@ -45,7 +45,7 @@ FISH = {
     "flounder":    ("species-flounder.jpg",    "flounder, a smaller oval flatfish with a brown mottled upper side and faint darker spots"),
     "tilefish":    ("species-tilefish.jpg",    "golden tilefish with a long blue-grey body flecked with yellow-gold, a fleshy ridge on the head and yellow markings on the face"),
     "whiting":     ("species-whiting.jpg",     "whiting with a slim silvery body, a faint golden lateral tint, a small head and a forked tail"),
-    "mullet":      ("species-mullet.webp",      "grey mullet with a torpedo body, silver with faint horizontal grey stripes, a blunt rounded head and two separate dorsal fins"),
+    "mullet":      ("species-mullet.jpg",      "grey mullet with a torpedo body, silver with faint horizontal grey stripes, a blunt rounded head and two separate dorsal fins"),
     "buffalofish": ("species-buffalofish.jpg", "buffalo fish with a heavy deep bronze-grey body, large coarse scales, a high arched back and a small downturned mouth"),
     "carp":        ("species-carp.jpg",        "common carp with large golden-brown scales, a thick body, two short barbels at the mouth corners and orange-tinged lower fins"),
     "dorado":      ("species-dorado.webp",      None),  # filled from --dorado

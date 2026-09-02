@@ -4,8 +4,16 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Order by Phone",
+            "subtext": "<p>Sunday–Thursday<br>(646) 750-9232</p>"
+          }
+        }
+      },
+      "block_order": ["contact"],
       "settings": {
         "color_scheme": "scheme-3",
         "newsletter_enable": true,

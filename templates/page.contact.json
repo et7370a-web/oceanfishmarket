@@ -21,7 +21,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Have questions about our products, delivery, or wholesale inquiries? We'd love to hear from you.</p>"
+            "text": "<p>Have questions about our products, delivery, or wholesale inquiries? We'd love to hear from you.</p><p>Call us at <a href=\"tel:+16467509232\">(646) 750-9232</a> — open Sunday–Thursday.</p>"
           }
         }
       },

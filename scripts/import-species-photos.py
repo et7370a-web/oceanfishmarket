@@ -27,7 +27,7 @@ DEST = {
     "flounder": "species-flounder.jpg",
     "tilefish": "species-tilefish.jpg",
     "whiting": "species-whiting.jpg",
-    "mullet": "species-mullet.webp",
+    "mullet": "species-mullet.jpg",
     "buffalofish": "species-buffalofish.jpg",
     "carp": "species-carp.jpg",
     "dorado": "species-dorado.webp",
