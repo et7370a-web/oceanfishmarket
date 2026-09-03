@@ -19,3 +19,4 @@ _preview*.html
 _species_raw/
 .gemini_key
 _species_inbox/
+.claude/
